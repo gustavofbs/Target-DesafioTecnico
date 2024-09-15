@@ -3,7 +3,7 @@ require 'json'
 # Função para carregar os dados do JSON
 def carregar_dados_faturamento(arquivo)
   file = File.read(arquivo)
-  JSON.parse(file)['faturamento']  # Mude para o nome que estiver no objeto do json
+  JSON.parse(file)  # Remove a referência à chave 'faturamento'
 end
 
 # Função para calcular o menor e maior faturamento, e dias acima da média
@@ -26,7 +26,7 @@ def calcular_faturamento(faturamento)
 end
 
 # Caminho para o arquivo JSON com os dados de faturamento
-arquivo_faturamento = 'faturamento.json'
+arquivo_faturamento = 'dados.json'
 
 # Carregar os dados do faturamento
 faturamento = carregar_dados_faturamento(arquivo_faturamento)
